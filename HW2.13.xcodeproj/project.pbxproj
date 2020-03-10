@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9B7CE95B241827F700408E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CE95A241827F700408E3C /* AppDelegate.swift */; };
-		9B7CE95D241827F700408E3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CE95C241827F700408E3C /* SceneDelegate.swift */; };
 		9B7CE95F241827F700408E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CE95E241827F700408E3C /* ViewController.swift */; };
 		9B7CE962241827F700408E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7CE960241827F700408E3C /* Main.storyboard */; };
-		9B7CE965241827F700408E3C /* HW2_13.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CE963241827F700408E3C /* HW2_13.xcdatamodeld */; };
+		9B7CE965241827F700408E3C /* taskDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CE963241827F700408E3C /* taskDB.xcdatamodeld */; };
 		9B7CE967241827FB00408E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B7CE966241827FB00408E3C /* Assets.xcassets */; };
 		9B7CE96A241827FB00408E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B7CE968241827FB00408E3C /* LaunchScreen.storyboard */; };
+		9B7CE97624182A9600408E3C /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7CE97524182A9600408E3C /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B7CE957241827F700408E3C /* HW2.13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B7CE95A241827F700408E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B7CE95C241827F700408E3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9B7CE95E241827F700408E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B7CE961241827F700408E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B7CE964241827F700408E3C /* HW2_13.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HW2_13.xcdatamodel; sourceTree = "<group>"; };
 		9B7CE966241827FB00408E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B7CE969241827FB00408E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B7CE96B241827FB00408E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B7CE97524182A9600408E3C /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +58,48 @@
 		9B7CE959241827F700408E3C /* HW2.13 */ = {
 			isa = PBXGroup;
 			children = (
+				9B7CE9712418288400408E3C /* Constants */,
+				9B7CE97424182A6B00408E3C /* Managers */,
+				9B7CE973241828C300408E3C /* ViewModels */,
+				9B7CE972241828BD00408E3C /* Views */,
 				9B7CE95A241827F700408E3C /* AppDelegate.swift */,
-				9B7CE95C241827F700408E3C /* SceneDelegate.swift */,
 				9B7CE95E241827F700408E3C /* ViewController.swift */,
 				9B7CE960241827F700408E3C /* Main.storyboard */,
 				9B7CE966241827FB00408E3C /* Assets.xcassets */,
 				9B7CE968241827FB00408E3C /* LaunchScreen.storyboard */,
 				9B7CE96B241827FB00408E3C /* Info.plist */,
-				9B7CE963241827F700408E3C /* HW2_13.xcdatamodeld */,
+				9B7CE963241827F700408E3C /* taskDB.xcdatamodeld */,
 			);
 			path = HW2.13;
+			sourceTree = "<group>";
+		};
+		9B7CE9712418288400408E3C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		9B7CE972241828BD00408E3C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B7CE973241828C300408E3C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9B7CE97424182A6B00408E3C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9B7CE97524182A9600408E3C /* DataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B7CE95F241827F700408E3C /* ViewController.swift in Sources */,
+				9B7CE97624182A9600408E3C /* DataManager.swift in Sources */,
 				9B7CE95B241827F700408E3C /* AppDelegate.swift in Sources */,
-				9B7CE95D241827F700408E3C /* SceneDelegate.swift in Sources */,
-				9B7CE965241827F700408E3C /* HW2_13.xcdatamodeld in Sources */,
+				9B7CE965241827F700408E3C /* taskDB.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +329,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.smartdragon.HW2-13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -314,7 +346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.smartdragon.HW2-13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -342,13 +374,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9B7CE963241827F700408E3C /* HW2_13.xcdatamodeld */ = {
+		9B7CE963241827F700408E3C /* taskDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				9B7CE964241827F700408E3C /* HW2_13.xcdatamodel */,
 			);
 			currentVersion = 9B7CE964241827F700408E3C /* HW2_13.xcdatamodel */;
-			path = HW2_13.xcdatamodeld;
+			path = taskDB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
