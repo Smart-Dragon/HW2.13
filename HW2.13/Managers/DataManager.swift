@@ -26,22 +26,55 @@ class DataManager {
         })
         return container
     }()
+    
+    lazy var viewContext = { persistentContainer.viewContext }()
 
     // MARK: - Init
     
     private init() {}
-    
-    // MARK: - Core Data Saving support
 
+    // MARK: - Public Methods
+    
     func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
+        if viewContext.hasChanges {
             do {
-                try context.save()
+                try viewContext.save()
             } catch {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
+        }
+    }
+    
+    func addTask(name: String, completion: @escaping (Task) -> ()) {
+        let task = NSEntityDescription.insertNewObject(
+            forEntityName: "Task",
+            into: viewContext) as! Task
+        task.name = name
+        saveTask(task: task, completion: completion)
+    }
+    
+    func updateTask(task: Task, name: String, completion: @escaping (Task) -> ()) {
+        task.name = name
+        saveTask(task: task, completion: completion)
+    }
+    
+    func deleteTask(task: Task, completion: @escaping (Task) -> ()) {
+        viewContext.delete(task)
+        saveTask(task: task, completion: completion)
+    }
+    
+    func saveTask(task: Task, completion: @escaping (Task) -> ()) {
+        saveContext()
+        completion(task)
+    }
+    
+    func fetchAllTasks() -> [Task] {
+        let request: NSFetchRequest<Task> = Task.fetchRequest()
+        do {
+            return try viewContext.fetch(request)
+        } catch {
+            return []
         }
     }
 }
