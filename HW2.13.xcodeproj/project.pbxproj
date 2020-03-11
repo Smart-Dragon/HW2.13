@@ -38,6 +38,7 @@
 		9BD0C7842418F5FB007CDD4B /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
 		9BD0C7862418F64D007CDD4B /* TaskCellViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModelProtocol.swift; sourceTree = "<group>"; };
 		9BD0C7882418F6BB007CDD4B /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
+		9BD0C78A24197FEE007CDD4B /* HW2_13_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HW2_13_2.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,9 +410,10 @@
 		9B7CE963241827F700408E3C /* taskDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9BD0C78A24197FEE007CDD4B /* HW2_13_2.xcdatamodel */,
 				9B7CE964241827F700408E3C /* HW2_13.xcdatamodel */,
 			);
-			currentVersion = 9B7CE964241827F700408E3C /* HW2_13.xcdatamodel */;
+			currentVersion = 9BD0C78A24197FEE007CDD4B /* HW2_13_2.xcdatamodel */;
 			path = taskDB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

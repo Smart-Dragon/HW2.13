@@ -53,7 +53,28 @@ class TaskViewController: UITableViewController {
         return swipeActions
     }
     
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let task = viewModel.tasks[sourceIndexPath.row]
+        viewModel.tasks.remove(at: sourceIndexPath.row)
+        viewModel.tasks.insert(task, at: destinationIndexPath.row)
+        DataManager.shared.saveOrderTask(viewModel: viewModel)
+
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        .none;
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        false
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        editTask(task: viewModel.tasks[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
@@ -86,6 +107,15 @@ class TaskViewController: UITableViewController {
                 action: #selector(addTask)
             
             )
+            
+            let sortButton = UIBarButtonItem(
+                title: "1-3-2",
+                style: .plain,
+                target: self,
+                action: #selector(setEditMode)
+            )
+            
+            navigationItem.leftBarButtonItem = sortButton
             navigationItem.rightBarButtonItem = addButton
         }
     }
@@ -110,6 +140,10 @@ class TaskViewController: UITableViewController {
         alert.addAction(cancelAction)
 
         present(alert, animated: true)
+    }
+    
+    @objc private func setEditMode() {
+        tableView.isEditing = !tableView.isEditing
     }
     
     @objc private func addTask() {

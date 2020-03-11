@@ -69,8 +69,16 @@ class DataManager {
         completion(task)
     }
     
+    func saveOrderTask(viewModel: TaskViewModelProtocol) {
+        for index in viewModel.tasks.indices {
+            viewModel.tasks[index].sort = Int64(index)
+        }
+        saveContext()
+    }
+    
     func fetchAllTasks() -> [Task] {
         let request: NSFetchRequest<Task> = Task.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "sort", ascending: true)]
         do {
             return try viewContext.fetch(request)
         } catch {
